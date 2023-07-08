@@ -180,17 +180,20 @@
 
 
 //with redux
+
+
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
-import { fetchProperties, selectAllProperties, addToComparison, removeFromComparison, selectComparisonProperties } from './store/propertiesSlice';
+import { fetchProperties, selectAllProperties, addToComparison } from './store/propertiesSlice';
 import Comparison from './components/Comparison';
+import Home from './components/Home';
+import StickyButton from './components/StickyButton';
 
-const Home = () => {
+const App = () => {
   const dispatch = useDispatch();
   const properties = useSelector(selectAllProperties);
-  const comparisonProperties = useSelector(selectComparisonProperties);
 
   useEffect(() => {
     dispatch(fetchProperties());
@@ -200,56 +203,6 @@ const Home = () => {
     dispatch(addToComparison(property));
   };
 
-  const handleRemoveFromComparison = (id) => {
-    dispatch(removeFromComparison(id));
-  };
-
-  return (
-    <div className="home">
-      <h2>Properties</h2>
-      <div className="property-list">
-        {properties.map((property) => (
-          <PropertyCard
-            key={property.id}
-            property={property}
-            comparisonProperties={comparisonProperties}
-            onAddToComparison={handleAddToComparison}
-            onRemoveFromComparison={handleRemoveFromComparison}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const PropertyCard = ({ property, comparisonProperties, onAddToComparison, onRemoveFromComparison }) => {
-  const { id, name, price, area, rooms } = property;
-  const added = comparisonProperties.some((p) => p.id === id);
-
-  const handleAddToComparison = () => {
-    onAddToComparison(property);
-  };
-
-  const handleRemoveFromComparison = () => {
-    onRemoveFromComparison(id);
-  };
-
-  return (
-    <div className="property-card">
-      <h3>{name}</h3>
-      <p>Price: {price}</p>
-      <p>Area: {area}</p>
-      <p>Rooms: {rooms}</p>
-      {added ? (
-        <button style={{ backgroundColor: "red" }} onClick={handleRemoveFromComparison}>Remove from Comparison</button>
-      ) : (
-        <button style={{ backgroundColor: "green" }} onClick={handleAddToComparison}>Add to Comparison</button>
-      )}
-    </div>
-  );
-};
-
-const App = () => {
   return (
     <Router>
       <div className="app">
@@ -264,9 +217,18 @@ const App = () => {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                properties={properties}
+                onAddToComparison={handleAddToComparison}
+              />
+            }
+          />
           <Route path="/comparison" element={<Comparison />} />
         </Routes>
+        <StickyButton />
       </div>
     </Router>
   );

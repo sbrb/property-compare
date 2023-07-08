@@ -5,9 +5,9 @@ export const fetchProperties = createAsyncThunk('properties/fetchProperties', as
     return new Promise((resolve) => {
         setTimeout(() => {
             const data = [
-                { id: 1, name: 'Property 1', price: '$250,000', area: '1500 sqft', rooms: 3 },
-                { id: 2, name: 'Property 2', price: '$350,000', area: '2000 sqft', rooms: 4 },
-                { id: 3, name: 'Property 3', price: '$500,000', area: '2500 sqft', rooms: 5 },
+                { id: 1, name: 'Property 1', price: '$250,000', },
+                { id: 2, name: 'Property 2', price: '$350,000', area: '2000 sqft',  },
+                { id: 3, name: 'Property 3', price: '$500,000', area: '2500 sqft',  },
             ];
             resolve(data);
         }, 1000);
