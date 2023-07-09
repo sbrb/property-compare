@@ -7,3 +7,8 @@
     background-color: red;
     color: white;
 }
+
+.card_img {
+    width: 8rem !important;
+    height: 5rem !important;
+}

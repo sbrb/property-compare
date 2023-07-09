@@ -13,8 +13,8 @@
     padding: 20px;
     margin: 10px;
     border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    box-shadow: 0 2px 4px #0000001a;
 }
 
 .property-card h3 {

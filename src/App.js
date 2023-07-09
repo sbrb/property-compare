@@ -1,3 +1,4 @@
+
 ////without redux
 // import React, { useState, useEffect } from 'react';
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -183,7 +184,7 @@
 
 
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 import { fetchProperties, selectAllProperties, addToComparison } from './store/propertiesSlice';
@@ -206,16 +207,6 @@ const App = () => {
   return (
     <Router>
       <div className="app">
-        <nav className="navbar">
-          <ul className="navbar-list">
-            <li className="navbar-item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="navbar-item">
-              <Link to="/comparison">Comparison</Link>
-            </li>
-          </ul>
-        </nav>
         <Routes>
           <Route
             path="/"
@@ -235,3 +226,6 @@ const App = () => {
 };
 
 export default App;
+
+
+

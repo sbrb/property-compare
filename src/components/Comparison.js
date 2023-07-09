@@ -14,15 +14,22 @@ const Comparison = () => {
 
     return (
         <div className="comparison">
-            <h2>Comparison List</h2>
             <div className="comparison-list">
                 {comparisonProperties.length === 0 ? (
                     <p>No properties selected for comparison.</p>
                 ) : (
                     <ul>
+                        {comparisonProperties.length > 0 && (
+                            <div className="add-property-card">
+                                <Link to="/">
+                                    <button>Add to Comparison</button>
+                                </Link>
+                            </div>
+                        )}
                         {comparisonProperties.map((property) => (
                             <li key={property.id} className="comparison-property">
                                 <div>
+                                    <img src={property.image} alt="" />
                                     <div className="property-name">{property.name}</div>
                                     <div className="property-price">{property.price}</div>
                                     {property.area ? (
@@ -42,14 +49,6 @@ const Comparison = () => {
                             </li>
                         ))}
                     </ul>
-                )}
-                {comparisonProperties && (
-                    <div className="add-property-card">
-                        <p>Add Property</p>
-                        <Link to="/">
-                            <button>Add to Comparison</button>
-                        </Link>
-                    </div>
                 )}
             </div>
         </div>

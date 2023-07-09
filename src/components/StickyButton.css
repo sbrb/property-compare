@@ -1,21 +1,63 @@
-.sticky-button {
+.sticky-button-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
+    top: 300px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.compare-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.compare_btn {
+    padding: .7rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 1rem 0 0 1rem;
+    color: #F5F5F5;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.compare_btn:hover {
+    color: #007bff;
+    background-color: #F5F5F5;
+    border-top: .1rem solid #007bff;
+    border-bottom: .1rem solid #007bff;
+    border-left: .1rem solid #007bff;
+}
+
+.compare_btn.clicked {
+    background-color: #F5F5F5;
+    color: #007bff;
+    border-top: .1rem solid #007bff;
+    border-left: .1rem solid #007bff;
+    border-bottom: none;
+    border-radius: 1rem 0 0 0;
+}
+
+.sticky-button {
+    padding: 1rem;
     background-color: #f5f5f5;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem 0 0 1rem;
+    border-left: .1rem solid #007bff;
+    border-bottom: .1rem solid #007bff;
 }
 
 .sticky-button h3 {
     margin: 0 0 10px;
+    text-align: center;
 }
 
 .sticky-button ul {
     list-style-type: none;
     padding: 0;
-    margin: 0 0 10px;
+    margin: 0;
 }
 
 .sticky-button li {
@@ -33,24 +75,53 @@
     cursor: pointer;
 }
 
-.sticky-button button:hover {
-    color: #000000;
-}
-
-.sticky-button button:focus {
-    outline: none;
-}
-
-.sticky-button .compare-button {
-    margin-right: 10px;
-}
-
-.sticky-button .remove-all-button {
-    background-color: #ff0000;
-    color: #fff;
-}
-
 .compare-button {
     background-color: #0ac90a !important;
     color: white !important;
+    margin-left: 1rem;
+}
+
+.compare-button:hover {
+    background-color: #0ab50a !important;
+}
+
+.remove-all-button {
+    background-color: #ff0000 !important;
+    color: #fff !important;
+    margin-left: .7rem;
+}
+
+.remove-all-button:hover {
+    background-color: #d60c0c !important;
+}
+
+.compare-button,
+.remove-all-button {
+    font-size: 16px;
+    border-radius: .4rem;
+    padding: .5rem 1rem !important;
+}
+
+.sticky_img {
+    width: 6rem;
+    height: 4rem;
+    margin: 0 1rem 1rem 1rem;
+    border-radius: .3rem;
+}
+
+.cross_btn {
+    width: 1.5rem;
+    border: 1px solid red !important;
+    border-radius: 50%;
+    margin: -1rem .5rem 0 .8rem;
+}
+
+.cross_btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.compare_property_name {
+    margin-top: -1rem;
+    font-size: 18px !important;
 }

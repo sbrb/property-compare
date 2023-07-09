@@ -6,7 +6,7 @@ const PropertyCard = ({ property }) => {
     const dispatch = useDispatch();
     const comparisonProperties = useSelector(selectComparisonProperties);
 
-    const { id, name, price, area, rooms } = property;
+    const { id, name, price, area, rooms, image } = property;
     const added = comparisonProperties.some((p) => p.id === id);
 
     const handleToggleComparison = () => {
@@ -24,6 +24,7 @@ const PropertyCard = ({ property }) => {
 
     return (
         <div className="property-card">
+            <img style={{ width: "10rem", height: "7rem" }} src={image} alt="" />
             <h3>{name}</h3>
             <p>Price: {price}</p>
             <p>Area: {area}</p>

@@ -1,45 +1,68 @@
-.comparison-property{
-    display: inline-block !important;
-}
-
-.comparison-list ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0;
-}
-
-.comparison-list li {
-    width: 48%;
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1rem;
-}
-
 .comparison {
     margin-top: 20px;
 }
 
 .comparison-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
     border-radius: 8px;
-    width: 600px;
+    width: 900px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
 }
 
 .comparison-list h2 {
     margin-top: 0;
 }
 
-.comparison-list button {
+.comparison-list ul {
+    padding: 0;
+    list-style-type: none;
+    /* Remove bullet points */
+}
+
+.comparison-property {
+    width: calc(25% - 10px);
+    margin-bottom: 10px;
+    display: inline-block;
+    /* margin: .3rem; */
+}
+
+.comparison-property>div {
+    background-color: #fff;
+    padding: 10px;
+    /* border-radius: 4px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    height: 100%;
+}
+
+.comparison-property img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.property-name {
+    font-weight: bold;
+}
+
+.property-price {
+    margin-bottom: 5px;
+}
+
+.property-value {
+    margin-bottom: 5px;
+}
+
+.property-not-available {
+    margin-bottom: 5px;
+    color: red;
+}
+
+.comparison-property button {
     padding: 5px 10px;
     border: none;
     background-color: #dc3545;
@@ -48,12 +71,8 @@
     border-radius: 4px;
 }
 
-.comparison-list button:hover {
+.comparison-property button:hover {
     background-color: #c82333;
-}
-
-.comparison-list p {
-    margin-top: 0;
 }
 
 .add-property-card {
@@ -72,7 +91,7 @@
     background-color: #1d9a1f;
     color: #fff;
     border: none;
-    padding: 5px 10px;
     border-radius: 4px;
     cursor: not-allowed;
+    padding: 0.5rem;
 }
